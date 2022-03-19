@@ -12,7 +12,7 @@ exports.addJourney = async (req, res) => {
 
   const schema = joi.object({
     title: joi.string(),
-    description: joi.string(),
+    description: joi.string().min(2),
   });
 
   const { error } = schema.validate(req.body);
